@@ -15,8 +15,10 @@ const Container = styled.ul`
     width: 30px;
     height: 30px;
     transform: initial;
+    
     &:before {
       font-size: 30px;
+      color: ${props => props.buttonColor || "gray"};
     }
   }
   
@@ -39,8 +41,8 @@ export const SliderItem = styled.li`
 `;
 
 
-const Slider = ({ children }) => (
-  <Container>
+const Slider = ({ children, buttonColor }) => (
+  <Container buttonColor={buttonColor}>
     <SlickSlider {...{
       dots: false,
       infinite: false,
